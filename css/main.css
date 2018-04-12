@@ -1,0 +1,88 @@
+body, header, footer, section, h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #4d4d4d;
+}
+body header, body section, body footer {
+  float: none;
+  clear: both;
+  padding: 40px 0;
+  width: 100%;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body header, body section {
+  border-bottom: 1px solid #e3e3e3;
+}
+body h1, body h2, body h3, body h4 {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+}
+body p {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+body h1 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 45px;
+}
+body h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+body p {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 25px;
+}
+body ul {
+  text-transform: uppercase;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+}
+body ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+body .content_wrapper {
+  width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+body .cols_2, body .content_wrapper {
+  overflow: hidden;
+}
+body .cols_2 {
+  width: 50%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+body .about_me_content {
+  float: left;
+}
+body .about_me_image {
+  float: right;
+}
+body .about_me_image img {
+  width: 100%;
+  height: auto;
+}
+body header ul {
+  text-align: right;
+  padding-right: 15px;
+}
+body header ul li {
+  margin: 8px 0 10px 20px;
+  cursor: pointer;
+}
+body header ul > li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}

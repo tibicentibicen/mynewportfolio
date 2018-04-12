@@ -1,0 +1,125 @@
+// FONT VARIABLES
+$lato: "Lato", Helvetica, Arial, sans-serif;
+$roboto: "Roboto", Helvetica, Arial, sans-serif;
+
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-o-transition: $transition;
+	transition: $transition;
+}
+
+@mixin boxsizing($boxsizing) {
+	-webkit-box-sizing: $boxsizing;
+	   -moz-box-sizing: $boxsizing;
+	        box-sizing: $boxsizing;
+}
+
+@mixin allfontproperties ($family, $fsize, $fweight){
+	font: {family: #{$family}; size:#{$fsize}; weight:#{$fweight}; }
+} 
+
+@mixin fontsizeweightline ($fsize, $fweight, $lheight){
+	font: {size:#{$fsize}; weight:#{$fweight}; }
+	line: {height:#{$lheight};}
+
+}
+
+body, header, footer, section, h1, h2, h3, h4, h5, h6, p, ul, li {
+	margin:  0;
+	padding: 0;
+}
+
+body {
+	color: #4d4d4d;
+	header, section, footer {
+		float: none;
+		clear: both;
+		padding: 40px 0;
+		width: 100%;
+		overflow: hidden;
+		@include boxsizing (border-box);
+	}
+
+	header, section {
+		border-bottom: 1px solid #e3e3e3;
+	}
+
+	h1, h2, h3, h4 {
+		font-family: $lato;
+	}
+
+	p{
+		font-family: $roboto;
+	}
+
+	h1 {
+		@include fontsizeweightline (36px, 700, 45px);
+	}
+
+	h2 {
+		@include fontsizeweightline (30px, 700, 1.4);
+	}
+
+	p {
+		@include fontsizeweightline (16px, normal, 25px);
+	}
+
+	ul {
+		text-transform: uppercase;
+		font-family: $lato;
+
+		li {
+			list-style-type: none;
+			display: inline-block;
+		}
+	}
+
+	.content_wrapper {
+		width: 1280px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+
+	.cols_2, .content_wrapper {
+		overflow: hidden;
+	}
+
+	.cols_2 {
+		width: 50%;
+		@include boxsizing (border-box);
+		padding: 0 15px;
+	}
+
+	.about_me_content {
+		float: left;
+	}
+
+	.about_me_image {
+		float: right;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	header {
+
+		ul {
+			text-align: right;
+			padding-right: 15px;
+
+			li {
+				margin: 8px 0 10px 20px;
+				cursor: pointer;
+			}
+
+			& > li{
+				display: inline-block;
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+		}
+	}
+}//end body
