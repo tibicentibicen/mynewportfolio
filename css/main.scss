@@ -2,11 +2,12 @@
 $lato: "Lato", Helvetica, Arial, sans-serif;
 $roboto: "Roboto", Helvetica, Arial, sans-serif;
 
+//MIXINS
 @mixin transition($transition) {
 	-webkit-transition: $transition;
-	-moz-transition: $transition;
-	-o-transition: $transition;
-	transition: $transition;
+	   -moz-transition: $transition;
+	     -o-transition: $transition;
+	        transition: $transition;
 }
 
 @mixin boxsizing($boxsizing) {
@@ -15,14 +16,13 @@ $roboto: "Roboto", Helvetica, Arial, sans-serif;
 	        box-sizing: $boxsizing;
 }
 
-@mixin allfontproperties ($family, $fsize, $fweight){
-	font: {family: #{$family}; size:#{$fsize}; weight:#{$fweight}; }
+@mixin allfontproperties ($family, $fsize, $fweight) {
+	font: {family: #{$family}; size:#{$fsize}; weight:#{$fweight};}
 } 
 
-@mixin fontsizeweightline ($fsize, $fweight, $lheight){
-	font: {size:#{$fsize}; weight:#{$fweight}; }
+@mixin fontsizeweightline ($fsize, $fweight, $lheight) {
+	font: {size:#{$fsize}; weight:#{$fweight};}
 	line: {height:#{$lheight};}
-
 }
 
 body, header, footer, section, h1, h2, h3, h4, h5, h6, p, ul, li {
@@ -55,6 +55,7 @@ body {
 
 	h1 {
 		@include fontsizeweightline (36px, 700, 45px);
+		margin-bottom: 2px;
 	}
 
 	h2 {
@@ -93,6 +94,46 @@ body {
 
 	.about_me_content {
 		float: left;
+
+		.about_me_text {
+			
+			@include boxsizing (border-box);
+			margin-bottom: 20px;
+		}
+
+		.about_me_info {
+			overflow: hidden;
+
+			p {
+				@include fontsizeweightline (14px, normal, 20px);
+				margin-bottom: 10px;
+
+				span {
+					padding-left: 90px;
+					display: block;
+				}
+
+				span.span-title {
+					font-weight: bold;
+					text-transform: uppercase;
+					padding-left: 0;
+					float: left;
+				}
+
+				span.span-icons {
+					
+					a {
+						padding-right: 20px;
+						margin-bottom: 5px;
+						min-width: 16px;
+						text-align: center;
+						@include fontsizeweightline (14px, normal, 1.4);
+
+					}
+
+				}
+			}
+		}
 	}
 
 	.about_me_image {
@@ -109,6 +150,8 @@ body {
 		ul {
 			text-align: right;
 			padding-right: 15px;
+			padding-left: 15px;
+			@include fontsizeweightline (12px, 700, 20px);
 
 			li {
 				margin: 8px 0 10px 20px;
