@@ -16,25 +16,29 @@ body header, body section, body footer {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-body header, body section {
-  border-bottom: 1px solid #e3e3e3;
-}
 body h1, body h2, body h3, body h4 {
   font-family: "Lato", Helvetica, Arial, sans-serif;
 }
 body p {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
+body h1, body h4 {
+  margin-bottom: 2px;
+}
 body h1 {
   font-size: 36px;
   font-weight: 700;
   line-height: 45px;
-  margin-bottom: 2px;
 }
 body h2 {
   font-size: 30px;
   font-weight: 700;
   line-height: 1.4;
+}
+body h4 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
 }
 body p {
   font-size: 16px;
@@ -49,25 +53,77 @@ body ul li {
   list-style-type: none;
   display: inline-block;
 }
+body hr {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+  mmargin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+body .section {
+  border-top: 1px solid #e3e3e3;
+}
+body .cta {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.66;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+  padding: 15px;
+  text-align: center;
+  margin-right: 30px;
+  min-width: 170px;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+body .cta.blue {
+  background-color: #3333ff;
+  color: #ffffff;
+}
+body .cta.grey {
+  background-color: #efefef;
+}
+body .cta:hover {
+  background-color: #252525;
+  color: #ffffff;
+}
+body .cols_33, body .cols_50, body .cols_66, body .content_wrapper, body .row {
+  overflow: hidden;
+}
 body .content_wrapper {
   width: 1280px;
   margin: 0 auto;
-  overflow: hidden;
 }
-body .cols_2, body .content_wrapper {
-  overflow: hidden;
+body .row {
+  margin-left: -15px;
+  margin-right: -15px;
 }
-body .cols_2 {
-  width: 50%;
+body .cols_33, body .cols_50, body .cols_66 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0 15px;
-}
-body .about_me_content {
   float: left;
 }
-body .about_me_content .about_me_text {
+body .cols_33 {
+  width: 33.333333%;
+}
+body .cols_50 {
+  width: 50%;
+}
+body .cols_66 {
+  width: 66.666666%;
+}
+body .about_me_content .about_me_text, body .about_me_content .about_me_info, body .about_me_content .about_me_btns {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -86,14 +142,14 @@ body .about_me_content .about_me_info p span {
   padding-left: 90px;
   display: block;
 }
-body .about_me_content .about_me_info p span.span-title {
+body .about_me_content .about_me_info p span.span_title {
   font-weight: bold;
   text-transform: uppercase;
   padding-left: 0;
   float: left;
 }
-body .about_me_content .about_me_info p span.span-icons a {
-  padding-right: 20px;
+body .about_me_content .about_me_info p span.span_icons a {
+  padding-right: 35px;
   margin-bottom: 5px;
   min-width: 16px;
   text-align: center;
@@ -101,12 +157,39 @@ body .about_me_content .about_me_info p span.span-icons a {
   font-weight: normal;
   line-height: 1.4;
 }
-body .about_me_image {
-  float: right;
+body .about_me_content .about_me_info p span.span_icons a.my_facebook {
+  background: url("../images/icons8-facebook-50.png") top left no-repeat;
+  background-size: contain;
 }
-body .about_me_image img {
+body .about_me_content .about_me_info p span.span_icons a.my_facebook:hover {
+  background: url("../images/icons8-facebook-hover.png") top left no-repeat;
+  background-size: contain;
+}
+body .about_me_content .about_me_info p span.span_icons a.my_linkedin {
+  background: url("../images/icons8-linkedin-50.png") top left no-repeat;
+  background-size: contain;
+}
+body .about_me_content .about_me_info p span.span_icons a.my_linkedin:hover {
+  background: url("../images/icons8-linkedin-hover.png") top left no-repeat;
+  background-size: contain;
+}
+body .about_me_content .about_me_info p span.span_icons a.my_github {
+  background: url("../images/icons8-github-50.png") top left no-repeat;
+  background-size: contain;
+}
+body .about_me_content .about_me_info p span.span_icons a.my_github:hover {
+  background: url("../images/icons8-github-hover.png") top left no-repeat;
+  background-size: contain;
+}
+body .about_me_image .hello_image_holder {
+  position: relative;
+  padding-bottom: 56.2%;
+}
+body .about_me_image .hello_image_holder img {
+  position: absolute;
+  object-fit: cover;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 body header ul {
   text-align: right;

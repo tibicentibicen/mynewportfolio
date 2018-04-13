@@ -41,10 +41,6 @@ body {
 		@include boxsizing (border-box);
 	}
 
-	header, section {
-		border-bottom: 1px solid #e3e3e3;
-	}
-
 	h1, h2, h3, h4 {
 		font-family: $lato;
 	}
@@ -53,13 +49,20 @@ body {
 		font-family: $roboto;
 	}
 
+	h1, h4 {
+		margin-bottom: 2px;
+	}
+
 	h1 {
 		@include fontsizeweightline (36px, 700, 45px);
-		margin-bottom: 2px;
 	}
 
 	h2 {
 		@include fontsizeweightline (30px, 700, 1.4);
+	}
+
+	h4 {
+		@include fontsizeweightline (18px, 700, 1.5);
 	}
 
 	p {
@@ -76,26 +79,89 @@ body {
 		}
 	}
 
+	hr {
+		@include boxsizing(content-box);
+		height: 0;
+		mmargin-top: 20px;
+		margin-bottom: 20px;
+		border: 0;	
+		border-top: 1px solid #eeeeee;
+	}
+
+	.section {
+		border-top: 1px solid #e3e3e3;
+	}
+
+	.cta {
+		
+		font-family: $lato;
+		font-size: 12px;
+		font-weight: bold;
+		line-height: 1.66;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #000000;
+		padding: 15px;
+		text-align: center;
+		margin-right: 30px;
+		min-width: 170px;
+		display: inline-block;
+		@include transition(all 0.3s ease);
+		border-radius: 2px;
+		
+		&.blue {
+			background-color: #3333ff;
+			color: #ffffff;
+		}
+
+		&.grey {
+			background-color: #efefef;
+		}
+
+		&:hover {
+
+				background-color: #252525;
+				color: #ffffff;
+		}
+	}
+
+	.cols_33, .cols_50, .cols_66, .content_wrapper, .row {
+		overflow: hidden;
+	}
+
 	.content_wrapper {
 		width: 1280px;
 		margin: 0 auto;
-		overflow: hidden;
 	}
 
-	.cols_2, .content_wrapper {
-		overflow: hidden;
-	}
+	.row {
 
-	.cols_2 {
-		width: 50%;
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.cols_33, .cols_50, .cols_66 {
 		@include boxsizing (border-box);
 		padding: 0 15px;
+		float: left;
+	}
+
+	.cols_33 {
+
+		width: 33.333333%;
+	}
+
+	.cols_50 {
+
+		width: 50%;
+	}
+
+	.cols_66 {
+		width: 66.666666%;
 	}
 
 	.about_me_content {
-		float: left;
 
-		.about_me_text {
+		.about_me_text, .about_me_info, .about_me_btns {
 			
 			@include boxsizing (border-box);
 			margin-bottom: 20px;
@@ -113,37 +179,78 @@ body {
 					display: block;
 				}
 
-				span.span-title {
+				span.span_title {
 					font-weight: bold;
 					text-transform: uppercase;
 					padding-left: 0;
 					float: left;
 				}
 
-				span.span-icons {
+				span.span_icons {
 					
 					a {
-						padding-right: 20px;
+						padding-right: 35px;
 						margin-bottom: 5px;
 						min-width: 16px;
 						text-align: center;
 						@include fontsizeweightline (14px, normal, 1.4);
 
-					}
+						&.my_facebook {
 
+							background: url('../images/icons8-facebook-50.png') top left no-repeat;
+							background-size: contain;
+
+							&:hover {
+								background: url('../images/icons8-facebook-hover.png') top left no-repeat;
+								background-size: contain;
+							}
+						}
+
+						&.my_linkedin {
+
+							background: url('../images/icons8-linkedin-50.png') top left no-repeat;
+							background-size: contain;
+
+							&:hover {
+								background: url('../images/icons8-linkedin-hover.png') top left no-repeat;
+								background-size: contain;
+							}
+
+						}
+
+						&.my_github {
+
+							background: url('../images/icons8-github-50.png') top left no-repeat;
+							background-size: contain;
+
+							&:hover {
+								background: url('../images/icons8-github-hover.png') top left no-repeat;
+								background-size: contain;
+							}
+						}
+					}
 				}
+			}
+		}
+	}//end about_me_content
+
+	.about_me_image {
+
+		.hello_image_holder {
+
+			position: relative; 
+			padding-bottom: 56.2%;
+
+			img {
+
+				position: absolute; 
+				object-fit: cover; 
+				width: 100%; 
+				height: 100%;
 			}
 		}
 	}
 
-	.about_me_image {
-		float: right;
-
-		img {
-			width: 100%;
-			height: auto;
-		}
-	}
 
 	header {
 
