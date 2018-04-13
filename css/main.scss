@@ -30,6 +30,9 @@ body, header, footer, section, h1, h2, h3, h4, h5, h6, p, ul, li {
 	padding: 0;
 }
 
+* {
+	@include boxsizing(border-box);
+}
 body {
 	color: #4d4d4d;
 	header, section, footer {
@@ -38,7 +41,6 @@ body {
 		padding: 40px 0;
 		width: 100%;
 		overflow: hidden;
-		@include boxsizing (border-box);
 	}
 
 	h1, h2, h3, h4 {
@@ -63,10 +65,26 @@ body {
 
 	h4 {
 		@include fontsizeweightline (18px, 700, 1.5);
+
+		&.job_title {
+			float: left;
+			margin-right: 10px;
+		}
 	}
 
 	p {
 		@include fontsizeweightline (16px, normal, 25px);
+
+		&.company_name {
+			padding: 3px 0;
+			line-height: 1.5;
+		}
+
+		&.job_description {
+			font-style: italic;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
 	}
 
 	ul {
@@ -82,7 +100,7 @@ body {
 	hr {
 		@include boxsizing(content-box);
 		height: 0;
-		mmargin-top: 20px;
+		margin-top: 20px;
 		margin-bottom: 20px;
 		border: 0;	
 		border-top: 1px solid #eeeeee;
@@ -125,7 +143,7 @@ body {
 		}
 	}
 
-	.cols_33, .cols_50, .cols_66, .content_wrapper, .row {
+	.cols_33, .cols_50, .cols_66, .cols_100, .content_wrapper, .row {
 		overflow: hidden;
 	}
 
@@ -139,10 +157,14 @@ body {
 		margin-left: -15px;
 		margin-right: -15px;
 	}
-	.cols_33, .cols_50, .cols_66 {
-		@include boxsizing (border-box);
+	.cols_25, .cols_33, .cols_50, .cols_66, .cols_100, .experience_row {
+		
 		padding: 0 15px;
 		float: left;
+	}
+
+	.cols_25 {
+		width: 25%;
 	}
 
 	.cols_33 {
@@ -159,11 +181,15 @@ body {
 		width: 66.666666%;
 	}
 
+	.cols_100 {
+		width: 100%;
+	}
+
 	.about_me_content {
 
 		.about_me_text, .about_me_info, .about_me_btns {
 			
-			@include boxsizing (border-box);
+			//@include boxsizing (border-box);
 			margin-bottom: 20px;
 		}
 
