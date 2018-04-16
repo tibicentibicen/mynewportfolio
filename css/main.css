@@ -73,10 +73,53 @@ body ul li {
   margin: 8px 0 10px 20px;
   cursor: pointer;
 }
+body ul li span.cool-link::after, body ul li span.cool-link:hover::after {
+  content: '';
+  display: block;
+  width: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4px;
+  height: 1px;
+  background: #4d4d4d;
+  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  transition: width 0.3s;
+}
+body ul li span:hover.cool-link::after {
+  width: 100%;
+}
 body ul > li {
   display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
+}
+body input, body textarea {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 30px;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.4;
+}
+body input[type=submit], body textarea[type=submit] {
+  width: 0;
+  border: none;
+  cursor: pointer;
+}
+body input:focus, body textarea:focus {
+  outline: none !important;
+  border: 2px solid #3333ff;
+}
+body input {
+  height: 50px;
+}
+body textarea {
+  height: 130px;
+  padding: 15px 20px;
 }
 body hr {
   -webkit-box-sizing: content-box;
@@ -256,8 +299,25 @@ body .cols_25 a {
   width: 100%;
   height: 100%;
 }
+body header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  transition: all .6s;
+}
 body header ul {
   text-align: right;
+  padding-right: 0;
+}
+body header.sticky {
+  position: fixed;
+  background: #ffffff;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.2);
+}
+body header.sticky + section#my_hello {
+  padding-top: 83px;
 }
 body section#my_portfolio ul {
   margin-top: 20px;

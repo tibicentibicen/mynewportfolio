@@ -97,6 +97,26 @@ body {
 			li {
 				margin: 8px 0 10px 20px;
 				cursor: pointer;
+
+				span {
+					&.cool-link {
+
+					 	&::after, &:hover::after {
+
+					 		content: '';
+						    display: block;
+						    width: 0;
+						    margin-left: auto;
+						    margin-right: auto;
+						    margin-top: 4px;
+						    height: 1px;
+						    background: #4d4d4d;
+						    @include transition(width .3s);
+					 	}
+				 	}
+
+				&:hover.cool-link::after {width: 100%;}
+				}
 			}
 
 			& > li{
@@ -104,6 +124,38 @@ body {
 				padding-left: 5px;
 				padding-right: 5px;
 			}
+	}//end ul
+
+	input, textarea {
+		width: 100%;
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-bottom: 30px;
+		font-family: $lato;
+		@include fontsizeweightline (14px, normal, 1.4);
+		
+		&[type=submit] {
+
+			width: 0;
+			border: none;
+			cursor: pointer;
+		}
+	
+		&:focus {
+			outline: none!important;
+			border: 2px solid #3333ff;
+		}		
+	}
+
+	input {
+		height: 50px;
+
+	}
+
+	textarea {
+
+		height: 130px;
+		padding: 15px 20px;
 	}
 
 	hr {
@@ -113,6 +165,7 @@ body {
 		margin-bottom: 20px;
 		border: 0;	
 		border-top: 1px solid #eeeeee;
+
 	}
 
 	.section {
@@ -350,13 +403,28 @@ body {
 
 
 	header {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		transition: all .6s;
+		
+		
 
 		ul {
 			text-align: right;
+			padding-right: 0;
 
+		}
+		&.sticky {
+		position: fixed;
+		background: #ffffff;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+			box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.2);
 		}
 	}
 
+	header.sticky + section#my_hello {padding-top: 83px;}
 	section#my_portfolio {
 		ul {
 
