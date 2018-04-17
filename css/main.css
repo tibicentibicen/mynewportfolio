@@ -1,4 +1,65 @@
-body, header, footer, section, h1, h2, h3, h4, h5, h6, p, ul, li {
+@keyframes zoom-in {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: none;
+  }
+}
+.is-animated {
+  animation: .6s  zoom-in;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0px, 100%, 0px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+.animated {
+  animation-duration: .8s;
+  animation-fill-mode: both;
+}
+
+.box-error {
+  border: 1px solid #cc0000;
+}
+
+.my_error {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: #ffffff;
+  display: none;
+  padding-left: 15px;
+  color: #cc0000;
+}
+.my_error.active {
+  display: block;
+}
+
+.no-error {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #ffffff;
+  display: none;
+}
+
+body, header, footer, section, h1, h2, h3, h4, h5, h6, p, ul, li, form {
   margin: 0;
   padding: 0;
 }
@@ -95,15 +156,17 @@ body ul > li {
   padding-left: 5px;
   padding-right: 5px;
 }
-body input, body textarea {
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-bottom: 30px;
+body input, body textarea, body .my_error {
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.4;
+}
+body input, body textarea {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 40px;
 }
 body input[type=submit], body textarea[type=submit] {
   width: 0;
@@ -118,7 +181,7 @@ body input {
   height: 50px;
 }
 body textarea {
-  height: 130px;
+  height: 140px;
   padding: 15px 20px;
 }
 body hr {

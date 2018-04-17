@@ -227,18 +227,18 @@
         		<div class="row">
         			<div class="cols_100">
         				<h2>Portfolio</h2>
-        				<ul>
-        					<li id="all" class="active"><span class="cool-link">All Projects</span></li>
-        					<li id="landing_pages"><span class="cool-link">Landing Pages</span></li>
-        					<li id="microsites"><span class="cool-link">Microsites</span></li>
-        					<li id="email"><span class="cool-link">Emails</span></li>
+        				<ul id="filter_list">
+        					<li data-filter="all" class="active all"><span class="cool-link">All Projects</span></li>
+        					<li data-filter="landing_page"><span class="cool-link">Landing Pages</span></li>
+        					<li data-filter="microsite"><span class="cool-link">Microsites</span></li>
+        					<li data-filter="email"><span class="cool-link">Emails</span></li>
         				</ul>
         			</div>
         		</div><!-- end row -->
         		<div class="row">
         			<div class="cols_100">
         				<div class="row">
-                            <div class="cols_25 all">                           
+                            <div class="cols_25 all" data-category="landing_page">                           
                                 <div class="portfolio_parent">
                                     <div class="portfolio_img"></div>
                                  </div>
@@ -248,7 +248,7 @@
                                     <div class="portfolio_type"></div>                    
                                     <a href="" data-toggle="" data-name="" data-target="" title=""></a>
                             </div>
-                            <div class="cols_25 all">                           
+                            <div class="cols_25 all" data-category="microsite">                           
                                 <div class="portfolio_parent">
                                     <div class="portfolio_img"></div>
                                 </div>
@@ -258,7 +258,7 @@
                                     <div class="portfolio_type"></div>
                                 <a href="" data-toggle="" data-name="" data-target="" title=""></a>
                             </div>
-                            <div class="cols_25 all">                           
+                            <div class="cols_25 all" data-category="landing_page">                           
                                 <div class="portfolio_parent">
                                     <div class="portfolio_img"></div>
                                 </div>
@@ -268,7 +268,7 @@
                                     <div class="portfolio_type"></div>
                                 <a href="" data-toggle="" data-name="" data-target="" title=""></a>
                             </div>
-                            <div class="cols_25 all">                           
+                            <div class="cols_25 all" data-category="email">                           
                                 <div class="portfolio_parent">
                                     <div class="portfolio_img"></div>
                                 </div>
@@ -278,7 +278,7 @@
                                     <div class="portfolio_type"></div>
                                 <a href="" data-toggle="" data-name="" data-target="" title=""></a>
                             </div>
-                            <div class="cols_25 all">                           
+                            <div class="cols_25 all" data-category="landing_page">                           
                                 <div class="portfolio_parent">
                                     <div class="portfolio_img"></div>
                                 </div>
@@ -288,7 +288,7 @@
                                     <div class="portfolio_type"></div>
                                 <a href="" data-toggle="" data-name="" data-target="" title=""></a>
                             </div>
-                            <div class="cols_25 all">                           
+                            <div class="cols_25 all" data-category="landing_page">                           
                                 <div class="portfolio_parent">
                                     <div class="portfolio_img"></div>
                                  </div>
@@ -298,7 +298,7 @@
                                     <div class="portfolio_type"></div>                    
                                     <a href="" data-toggle="" data-name="" data-target="" title=""></a>
                             </div>
-                            <div class="cols_25 all">                           
+                            <div class="cols_25 all" data-category="microsite">                           
                                 <div class="portfolio_parent">
                                     <div class="portfolio_img"></div>
                                 </div>
@@ -308,7 +308,7 @@
                                     <div class="portfolio_type"></div>
                                 <a href="" data-toggle="" data-name="" data-target="" title=""></a>
                             </div>
-                            <div class="cols_25 all">                           
+                            <div class="cols_25 all" data-category="landing_page">                           
                                 <div class="portfolio_parent">
                                     <div class="portfolio_img"></div>
                                 </div>
@@ -318,7 +318,7 @@
                                     <div class="portfolio_type"></div>
                                 <a href="" data-toggle="" data-name="" data-target="" title=""></a>
                             </div>
-                            <div class="cols_25 all">                           
+                            <div class="cols_25 all" data-category="email">                           
                                 <div class="portfolio_parent">
                                     <div class="portfolio_img"></div>
                                 </div>
@@ -328,7 +328,7 @@
                                     <div class="portfolio_type"></div>
                                 <a href="" data-toggle="" data-name="" data-target="" title=""></a>
                             </div>
-            				<div class="cols_25 all">        					
+            				<div class="cols_25 all" data-category="landing_page">        					
         						<div class="portfolio_parent">
                                     <div class="portfolio_img"></div>
                                 </div>
@@ -355,14 +355,31 @@
                     </div>
                     <div class="cols_66">
                         <div class="row">
-                            <div class="cols_50">
-                                <input id="name" type="text" placeholder="Name">
-                                <input id="email" type="text" placeholder="E-mail">
+                            <form action="" method="" id="" class="" style="position: relative; overflow: hidden;">
+                                <div class="cols_50">
+                                    <div class="element_wrapper"  style="position: relative; overflow: hidden;">
+                                        <input id="name" type="text" placeholder="Name">
+                                        <span class="my_error animated fadeInUp">Please provide your name</span>
+                                    </div>
+                                    <div class="element_wrapper" style="position: relative; overflow: hidden;">
+                                        <input id="email" type="text" placeholder="E-mail">
+                                        <span class="my_error animated fadeInUp">Please provide a valid email address</span>
+                                    </div>
+                                </div>
+                                <div class="cols_50">
+                                    <div class="element_wrapper" style="position: relative; overflow: hidden;">
+                                        <textarea id="message" placeholder="Message"></textarea>
+                                        <span class="my_error animated fadeInUp">Please say something of substance</span>
+                                    </div>
+                                    <input class="cta blue" type="submit" name="submit" id="submit">
+                                </div>
+                                <div class="no-error animated fadeInUp">
+                                <img src="images/green-check.png" alt="Thanks!">
+                                <h2>Thank you!</h2>
+                                <p>I will get back to you as soon as possible.</p>
                             </div>
-                            <div class="cols_50">
-                                <textarea id="message" placeholder="Message"></textarea>
-                                <input class="cta blue" type="submit" name="submit" id="submit">
-                            </div>
+                            </form>
+
                         </div>
                     </div>                  
                 </div>
