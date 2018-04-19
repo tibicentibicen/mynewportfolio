@@ -10,6 +10,13 @@ $roboto: "Roboto", Helvetica, Arial, sans-serif;
 	        transition: $transition;
 }
 
+@mixin transform($transform) {
+	-webkit-transform: $transform;
+	   -moz-transform: $transform;
+	     -o-transform: $transform;
+	        transform: $transform;
+}
+
 @mixin boxsizing($boxsizing) {
 	-webkit-box-sizing: $boxsizing;
 	   -moz-box-sizing: $boxsizing;
@@ -83,7 +90,7 @@ $roboto: "Roboto", Helvetica, Arial, sans-serif;
 	}
 }
 
-.no-error {
+.no_error {
 
 	position: absolute;
 	left:  0;
@@ -93,8 +100,75 @@ $roboto: "Roboto", Helvetica, Arial, sans-serif;
 	text-align: center;
 	background: #ffffff;
 	display: none;
+
+	&.active {
+		display: block;
+	}
 }
 
+
+	.modal {
+		overflow: hidden;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1050;
+		background-color: rgba(0, 0, 0, 0.4);
+		display: none;
+
+		p {margin-bottom: 20px;}
+
+		&.fade {
+			opacity: 0;
+			@include transition(opacity .2s ease-in);
+
+			.modal_dialog {
+				
+				@include transition(transform 2s ease-in-out);
+				width: 900px;
+				margin: 30px auto;
+				position: relative;
+			}
+			.modal_center {
+				@include transform(translateY(-75%));
+				top: 50%;
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+
+			
+		}
+
+		&.in {
+			opacity: 1;
+			display: block;
+			
+			.modal_dialog {
+				@include transform(translate(0,0));
+			}
+			.modal_center {
+				@include transform(translateY(-50%)!important);
+			}
+
+			
+		}
+	}
+
+
+.modal_content {
+	box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+	overflow: hidden;
+	background: #ffffff;
+	position: relative;
+	background-clip: padding-box;
+}
+
+.modal_body {
+	padding: 25px;
+	overflow: hidden;
+}
 body, header, footer, section, h1, h2, h3, h4, h5, h6, p, ul, li, form {
 	margin:  0;
 	padding: 0;
@@ -279,7 +353,11 @@ body {
 		}
 	}
 
-	.cols_33, .cols_50, .cols_66, .cols_100, .content_wrapper, .row {
+	form, .element_wrapper {
+		position: relative;
+	}
+
+	.cols_33, .cols_50, .cols_66, .cols_100, .content_wrapper, .row, .element_wrapper {
 		overflow: hidden;
 	}
 
@@ -498,7 +576,10 @@ body {
 		}
 	}
 
-	header.sticky + section#my_hello {padding-top: 83px;}
+	header.sticky + section#my_hello {
+		padding-top: 83px;
+	}
+	
 	section#my_portfolio {
 		ul {
 

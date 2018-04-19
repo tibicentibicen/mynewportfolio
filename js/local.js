@@ -62,66 +62,97 @@ $(document).ready(function() {
 	//contact form validation
 
 	var errors = false;
-	var name = $('#name');
-	var email = $('#email');
-	var message = $('#message');
-	var NoErrors = $('.no_error');
 
 	$("input:text, textarea").each(function () {
 
-            $(this).focus(function (){
-            if ($('.my_error:visible')){
-                    $(this).removeClass('box-error');
-                    $(this).next('span').removeClass('active');
-                    errors = false;
-            }						    
-        }); 
-
-    });
+		$(this).focus(function (){
+			if ($('.my_error:visible')){
+				$(this).removeClass('box-error');
+				$(this).next('span').removeClass('active');
+				errors = false;
+			}						    
+		}); 
+	});
 
 	function validateemail(inputvalue)  {  
 
-        var email = inputvalue.val();
-        var filter=/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])$/;
+		var email = inputvalue.val();
+		var filter=/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])$/;
 
-        if(filter.test(email)) { 
-          return true;        
-        }
+		if(filter.test(email)) { 
+			return true;        
+		}
 
-        else{   
-            return false;
-        }  
-    }
-
-    $('#submit').on('click', function(e) {
-    		e.preventDefault();
-    		
-    		if(name.length>0){
-                if (name.val() == '') {
-                        name.addClass('box-error');
-                        name.next('span').addClass('active');
-                        errors = true;
-                }
-            }
-
-    		if(email.length>0){            
-                if (!validateemail(email)) {
-                        email.addClass('box-error');
-                        email.next('span').addClass('active');
-                        errors = true;
-                }
-            }
-
-            if(message.length>0){
-                if (message.val() == '') {
-                        message.addClass('box-error');
-                        message.next('span').addClass('active');
-                        errors = true;
-                }
-            }
+		else{   
+			return false;
+		}  
+	}
 
 
+	function handleErrors() {
 
-    });
+		if (errors == true) {
+			return false;
+		}
+	}
+
+
+$("form").submit(function (e) {
+	  
+	e.preventDefault();
+	  
+	var clikedForm = $(this); // Select Form
+	var name = clikedForm.find('#name');
+	var email = clikedForm.find('#email');
+	var message = clikedForm.find('#message');
+	var NoErrors = clikedForm.find('.no_error');
+
+	if(name.length>0){
+		if (name.val() == '') {
+			name.addClass('box-error');
+			name.next('span').addClass('active');
+			errors = true
+		}
+	}
+
+	if(email.length>0){            
+		if (!validateemail(email)) {
+			email.addClass('box-error');
+			email.next('span').addClass('active');
+			errors = true
+		}
+	}
+	if(message.length>0){
+		if (message.val() == '') {
+			message.addClass('box-error');
+			message.next('span').addClass('active');
+			errors = true
+		}
+	}
+	handleErrors();
+
+	if (errors == false) {
+		//getvalues();
+		//alert('no errors');
+		NoErrors.addClass('active');
+		}
+	});
+	//end form validation
+
+	//launch  overlays
+
+	var $el = $('a[data-toggle]');
+
+	$el.on('click', function(e){
+		e.preventDefault();
+
+		var $this = $(this);
+		var theTarget = $this.attr('data-target');
+		var theTargetName = $this.attr('data-name');
+		var targetModal = $(theTarget);
+		
+		//console.log(targetModal);
+		targetModal.addClass('in')
+	});
 
 });

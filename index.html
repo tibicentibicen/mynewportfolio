@@ -83,7 +83,7 @@
 		        			</p>
 	        			</div>
 	        			<div class="about_me_btns">
-	        				<a href="" class="cta blue" title="Contact Me">Contact Me</a>
+	        				<a href="" class="cta blue" title="Contact Me" data-toggle="modal" data-target="#contact_modal">Contact Me</a>
 	        				<a href="" class="cta grey" title="Download CSV">Download CSV</a>
 	        			</div>        		
 	        		</div>
@@ -355,31 +355,32 @@
                     </div>
                     <div class="cols_66">
                         <div class="row">
-                            <form action="" method="" id="" class="" style="position: relative; overflow: hidden;">
+                            <form action="" method="" id="bottom_form" class="" style="overflow: hidden;">
                                 <div class="cols_50">
-                                    <div class="element_wrapper"  style="position: relative; overflow: hidden;">
+                                    <div class="element_wrapper">
                                         <input id="name" type="text" placeholder="Name">
                                         <span class="my_error animated fadeInUp">Please provide your name</span>
                                     </div>
-                                    <div class="element_wrapper" style="position: relative; overflow: hidden;">
+                                    <div class="element_wrapper">
                                         <input id="email" type="text" placeholder="E-mail">
                                         <span class="my_error animated fadeInUp">Please provide a valid email address</span>
                                     </div>
                                 </div>
                                 <div class="cols_50">
-                                    <div class="element_wrapper" style="position: relative; overflow: hidden;">
+                                    <div class="element_wrapper">
                                         <textarea id="message" placeholder="Message"></textarea>
                                         <span class="my_error animated fadeInUp">Please say something of substance</span>
                                     </div>
-                                    <input class="cta blue" type="submit" name="submit" id="submit">
                                 </div>
-                                <div class="no-error animated fadeInUp">
-                                <img src="images/green-check.png" alt="Thanks!">
-                                <h2>Thank you!</h2>
-                                <p>I will get back to you as soon as possible.</p>
-                            </div>
+                                <div class="cols_50">
+                                    <input class="cta blue" type="submit" name="Send Message" id="submit" value="Send Message">
+                                </div>
+                                <div class="no_error animated fadeInUp">
+                                    <img src="images/green-check.png" alt="Thanks!">
+                                    <h2>Thank you!</h2>
+                                    <p>I will get back to you as soon as possible.</p>
+                                </div>
                             </form>
-
                         </div>
                     </div>                  
                 </div>
@@ -389,10 +390,49 @@
         <footer class="section">
         	<div class="content_wrapper">
         		<div class="row">
-        			
         		</div>
         	</div>
         </footer>
+        <!-- contact me modal -->
+        <div class="modal fade" id="contact_modal">
+            <div class="modal_dialog modal_center">
+                <div class="modal_content">
+                    <div class="modal_body">
+                        <div class="cols_100">
+                            <h1>Let&rsquo;s collaborate!</h1>
+                            <p>Are you working on something? Let&rsquo;s make it happen! Drop me a letter and start your project right now! Just do it.</p>
+                        </div>
+                        <form action="" method="" id="" class="">
+                            <div class="cols_50">
+                                <div class="element_wrapper">
+                                    <input id="name" type="text" placeholder="Name">
+                                    <span class="my_error animated fadeInUp">Please provide your name</span>
+                                </div>
+                                <div class="element_wrapper">
+                                    <input id="email" type="text" placeholder="E-mail">
+                                    <span class="my_error animated fadeInUp">Please provide a valid email address</span>
+                                </div>
+                            </div>
+                            <div class="cols_50">
+                                <div class="element_wrapper">
+                                    <textarea id="message" placeholder="Message"></textarea>
+                                    <span class="my_error animated fadeInUp">Please say something of substance</span>
+                                </div>
+                            </div>
+                            <div class="cols_100">
+                                <input class="cta blue submit" type="submit" name="Send Message" id="submit2" value="Send Message">
+                                <a href="" class="cta grey" title="Download CSV">Close This</a>
+                            </div>
+                            <div class="no_error animated fadeInUp" style="overflow: hidden;">
+                                <img src="images/green-check.png" alt="Thanks!">
+                                <h2>Thank you!</h2>
+                                <p>I will get back to you as soon as possible.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>         
+            </div>
+        </div>
         
         
         <!-- Scripts -->

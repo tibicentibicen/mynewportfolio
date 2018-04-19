@@ -48,7 +48,7 @@
   display: block;
 }
 
-.no-error {
+.no_error {
   position: absolute;
   left: 0;
   top: 0;
@@ -57,6 +57,78 @@
   text-align: center;
   background: #ffffff;
   display: none;
+}
+.no_error.active {
+  display: block;
+}
+
+.modal {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+.modal p {
+  margin-bottom: 20px;
+}
+.modal.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in;
+  -moz-transition: opacity 0.2s ease-in;
+  -o-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+}
+.modal.fade .modal_dialog {
+  -webkit-transition: transform 2s ease-in-out;
+  -moz-transition: transform 2s ease-in-out;
+  -o-transition: transform 2s ease-in-out;
+  transition: transform 2s ease-in-out;
+  width: 900px;
+  margin: 30px auto;
+  position: relative;
+}
+.modal.fade .modal_center {
+  -webkit-transform: translateY(-75%);
+  -moz-transform: translateY(-75%);
+  -o-transform: translateY(-75%);
+  transform: translateY(-75%);
+  top: 50%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.modal.in {
+  opacity: 1;
+  display: block;
+}
+.modal.in .modal_dialog {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.modal.in .modal_center {
+  -webkit-transform: translateY(-50%) !important;
+  -moz-transform: translateY(-50%) !important;
+  -o-transform: translateY(-50%) !important;
+  transform: translateY(-50%) !important;
+}
+
+.modal_content {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  background: #ffffff;
+  position: relative;
+  background-clip: padding-box;
+}
+
+.modal_body {
+  padding: 25px;
+  overflow: hidden;
 }
 
 body, header, footer, section, h1, h2, h3, h4, h5, h6, p, ul, li, form {
@@ -227,7 +299,10 @@ body .cta:hover {
   background-color: #252525;
   color: #ffffff;
 }
-body .cols_33, body .cols_50, body .cols_66, body .cols_100, body .content_wrapper, body .row {
+body form, body .element_wrapper {
+  position: relative;
+}
+body .cols_33, body .cols_50, body .cols_66, body .cols_100, body .content_wrapper, body .row, body .element_wrapper {
   overflow: hidden;
 }
 body .content_wrapper {
