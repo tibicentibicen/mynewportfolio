@@ -98,14 +98,14 @@ $(document).ready(function() {
 
 
 $("form").submit(function (e) {
-	  
+	
 	e.preventDefault();
 	  
 	var clikedForm = $(this); // Select Form
 	var name = clikedForm.find('#name');
 	var email = clikedForm.find('#email');
 	var message = clikedForm.find('#message');
-	var NoErrors = clikedForm.find('.no_error');
+	var NoErrors = clikedForm.next('div');
 
 	if(name.length>0){
 		if (name.val() == '') {
@@ -143,16 +143,51 @@ $("form").submit(function (e) {
 
 	var $el = $('a[data-toggle]');
 
+	//$('#portfolio_modal').find('.modal_body').css('display', 'none');
+
 	$el.on('click', function(e){
 		e.preventDefault();
-
 		var $this = $(this);
 		var theTarget = $this.attr('data-target');
 		var theTargetName = $this.attr('data-name');
 		var targetModal = $(theTarget);
-		
-		//console.log(targetModal);
+		var thePortfolio = $('.modal_body[data-name="' + theTargetName + '"]');
+		//var thePortfolio = targetModal.find('.modal_body').attr('data-name');
+
+		$('.modal_body').removeClass('selected');
+		$('body').addClass('modal_open').css('padding-right', '16px');
+
+		//console.log(thePortfolio);
 		targetModal.addClass('in')
+		thePortfolio.addClass('selected');
+	});
+
+
+	function closeModal() {
+		
+		if ($('.my_error:visible')){
+			$('.my_error').removeClass('active');
+			$('.box-error').removeClass();
+		}
+
+		if ($('.no_error:visible')){
+			$('.no_error').removeClass('active');
+		}
+
+		$('.modal.fade').removeClass('in');
+		$('body').removeClass('modal_open').removeAttr('style');
+	}
+
+	$('#contact_modal, #portfolio_modal, .close_me').on('click', function(){
+		closeModal();
+	});
+
+	$('.modal_dialog.modal_center').on('click',  function(e){
+		e.stopPropagation();
+	})
+
+	$('.close_me').on('click', function(e){
+		e.preventDefault();
 	});
 
 });

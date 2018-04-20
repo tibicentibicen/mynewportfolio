@@ -99,6 +99,7 @@ $roboto: "Roboto", Helvetica, Arial, sans-serif;
 	height: 100%;
 	text-align: center;
 	background: #ffffff;
+	padding-top: 50px;
 	display: none;
 
 	&.active {
@@ -108,7 +109,6 @@ $roboto: "Roboto", Helvetica, Arial, sans-serif;
 
 
 	.modal {
-		overflow: hidden;
 		position: fixed;
 		top: 0;
 		right: 0;
@@ -150,9 +150,7 @@ $roboto: "Roboto", Helvetica, Arial, sans-serif;
 			}
 			.modal_center {
 				@include transform(translateY(-50%)!important);
-			}
-
-			
+			}			
 		}
 	}
 
@@ -168,6 +166,24 @@ $roboto: "Roboto", Helvetica, Arial, sans-serif;
 .modal_body {
 	padding: 25px;
 	overflow: hidden;
+}
+
+.modal_open {
+	overflow: hidden;
+
+	.modal {
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+}
+
+#portfolio_modal {
+
+	.modal_body {
+		display: none;
+
+		&.selected {display: block;}
+	}
 }
 body, header, footer, section, h1, h2, h3, h4, h5, h6, p, ul, li, form {
 	margin:  0;
