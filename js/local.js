@@ -1,19 +1,19 @@
-$(document).ready(function() {
-	
-	var makeshadow = $('header').offset().top;
 
-	// our function that decides weather the navigation bar should have "fixed" css position or not.
-   	var stickyNav = function(){
-	    var scrollTop = $(window).scrollTop(); // our current vertical position from the top
-	         
-	    // if we've scrolled more than the navigation, change its position to fixed to stick to top,
-	    // otherwise change it back to relative
-	    if (scrollTop > makeshadow) { 
-	        $('header').addClass('sticky');
-	    } else {
-	        $('header').removeClass('sticky'); 
-	    }
-	};
+function stickyNav () {
+
+	var el = $('header');
+	var pos = el.position();
+	var windowpos = $(window).scrollTop();
+
+	if (windowpos > pos.top) {
+
+		el.addClass('sticky');
+	} else {
+		el.removeClass('sticky');
+	}
+}
+
+$(document).ready(function() {
 
 	stickyNav();
 	// and run it again every time you scroll
@@ -25,9 +25,10 @@ $(document).ready(function() {
 		
 		var theid = $(this).attr('id');
 		var thetarget = $('section#my_' + theid).offset().top - 103;
-		//alert(thetarget);
+		
 
 		if($('#hamburger').is(':visible')) {
+
 			$('.line-1, .line-2, .line-3').removeClass('is-clicked');
 			$('#topnav').removeClass('ulanimated');
 			$('header').removeClass('responsive_sticky');
@@ -178,6 +179,8 @@ $("form").submit(function (e) {
 
 		if ($('.no_error:visible')){
 			$('.no_error').removeClass('active');
+			//$(this).closest('form').find("input[type=text], textarea").val("");
+			$('#name, #email, #message').val('');
 		}
 
 		$('.modal.fade').removeClass('in');
@@ -188,7 +191,7 @@ $("form").submit(function (e) {
 		closeModal();
 	});
 
-	$('.modal_dialog.modal_center').on('click',  function(e){
+	$('.modal_dialog, .modal_center').on('click',  function(e){
 		e.stopPropagation();
 	})
 

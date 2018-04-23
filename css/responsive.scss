@@ -22,6 +22,7 @@
 		header {
 
 			#hamburger {display: block;}
+			
 			ul {
 				display: none;
 				width: 100%;
@@ -57,5 +58,114 @@
 				background-color: blue;
 			}
 		}
+	}
+}
+
+@media only screen and (max-width: 940px) { 
+	
+	body {
+
+		h1 {
+			font-size: 30px;
+			margin-top: 30px;
+		}
+
+		h2 {
+
+			font-size: 24px;
+		}
+
+		p {
+
+			font-size: 14px;
+			line-height:  1.4
+		}
+
+		.clear {clear: both;}
+
+		.cols_33, .cols_50, .cols_66 {width: 100%;}
+
+		.cols_66 {
+
+			.cols_50, .experience_row {
+
+				padding-left: 0;
+				padding-right: 0;
+
+				hr.mobile_hr {display: block;}
+
+				&:first-child {padding: 20px 0; padding-bottom: 0;}
+			}
+		}
+
+		.cols_25 {width: 50%;}
+	}
+	.modal {
+
+		&.fade {
+			
+			.modal_center {
+
+				top: 0;
+			}
+			.modal_dialog {
+
+				//width: calc(100% - 40px);
+				width: 100%;
+			}
+		}
+
+		&.in {
+
+			.modal_center {
+
+				transform: translateY(0)!important;
+				margin-top: 0;
+			}
+		}
+	}
+
+	.modal_body {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	section#my_hello {
+
+		.about_me_content, .about_me_image {
+			width: 100%!important;
+		}
+
+		.about_me_image {
+			float: none;
+		}		
+	}
+} 
+
+@media only screen and (max-width: 480px) { 
+	body {
+
+		.cta {
+			min-width: 100%;
+
+			& + .cta {margin-top: 15px}
+		}
+
+		input.cta.blue {margin-bottom: 0;}
+
+		input, textarea {
+
+			transform: perspective(0);
+		}
+
+		.cols_25 {
+
+			width: 100%;
+		}
+	}
+
+	.modal_body {
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
