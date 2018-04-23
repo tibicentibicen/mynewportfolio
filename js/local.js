@@ -27,6 +27,12 @@ $(document).ready(function() {
 		var thetarget = $('section#my_' + theid).offset().top - 103;
 		//alert(thetarget);
 
+		if($('#hamburger').is(':visible')) {
+			$('.line-1, .line-2, .line-3').removeClass('is-clicked');
+			$('#topnav').removeClass('ulanimated');
+			$('header').removeClass('responsive_sticky');
+		}
+
 		$('html, body').animate({scrollTop: thetarget}, 2000);
 	});
 
@@ -188,6 +194,18 @@ $("form").submit(function (e) {
 
 	$('.close_me').on('click', function(e){
 		e.preventDefault();
+	});
+
+	//Mobile menu
+
+	var hamburger = $('#hamburger');
+	
+	hamburger.on('click',function() {
+		var mainUL = $(this).next('ul');
+		var parent = $(this).closest('header');
+		$('.line-1, .line-2, .line-3').toggleClass('is-clicked');
+		mainUL.toggleClass('ulanimated');
+		parent.toggleClass('responsive_sticky');
 	});
 
 });

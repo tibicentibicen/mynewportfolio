@@ -574,26 +574,70 @@ body {
 		padding-top: 20px;
 		padding-bottom: 20px;
 		transition: all .6s;
+		position: fixed;
+		background: #ffffff;
+		top: 0;
+		left: 0;
+		z-index: 1000;
 		
 		
+		#hamburger {
+			height: auto;
+			float: right;
+			padding: 15px;
+			cursor: pointer;
+			transform: translate(0, 0);
+			display: none;
 
+			.line-1,
+			.line-2,
+			.line-3 {
+				background-color: blue;
+				height: 4px;
+				width: 40px;
+				margin-bottom: 4px;
+				// height: 30px;
+				//width: 200px;
+				//margin-bottom: 30px;
+				border-radius: 10px;
+				transition: all 0.3s ease-in-out;
+				
+				&.is-clicked {background-color: white;}
+			}
+
+			// When clicked
+			.line-1.is-clicked {
+				transform: translateY(8.5px) rotate(45deg);
+				transform-origin: center center;
+			}
+
+			.line-2.is-clicked {
+				transform:  translateX(-100%);
+				opacity: 0;
+			}
+
+			.line-3.is-clicked {
+				transform:  translateY(-7px) rotate(-45deg);
+				transform-origin: center center;
+			}
+		}
 		ul {
 			text-align: right;
 			padding-right: 0;
 
 		}
 		&.sticky {
-		position: fixed;
-		background: #ffffff;
-		top: 0;
-		left: 0;
-		z-index: 1000;
+		// position: fixed;
+		// background: #ffffff;
+		// top: 0;
+		// left: 0;
+		// z-index: 1000;
 			box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.2);
 		}
 	}
 
-	header.sticky + section#my_hello {
-		padding-top: 83px;
+	header + section#my_hello {
+		padding-top: 103px;
 	}
 	
 	section#my_portfolio {
