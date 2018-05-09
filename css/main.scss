@@ -93,8 +93,8 @@ $roboto: "Roboto", Helvetica, Arial, sans-serif;
 	font-size: .7em;
 	line-height: 0;
 	vertical-align: .4em;
-
 }
+
 .no_error {
 
 	position: absolute;
@@ -228,7 +228,7 @@ body {
 		font-family: $lato;
 	}
 
-	p{
+	p, ul.columns{
 		font-family: $roboto;
 	}
 
@@ -253,7 +253,7 @@ body {
 		}
 	}
 
-	p {
+	p, ul.columns {
 		@include fontsizeweightline (16px, normal, 25px);
 
 		&.company_name {
@@ -268,11 +268,11 @@ body {
 		}
 	}
 
-	ul {
+	ul.special {
 		text-transform: uppercase;
 		font-family: $lato;
 
-			padding-right: 15px;
+
 			@include fontsizeweightline (12px, 700, 20px);
 
 			li {
@@ -305,7 +305,7 @@ body {
 				padding-left: 5px;
 				padding-right: 5px;
 			}
-	}//end ul
+	}//end ul.special
 
 	input, textarea, .my_error {
 		font-family: $lato;
@@ -317,7 +317,7 @@ body {
 		padding-left: 15px;
 		padding-right: 15px;
 		margin-bottom: 40px;
-		transform: perspective(1px);
+		// transform: perspective(1px);
 
 		
 		
@@ -671,7 +671,7 @@ body {
 				transform-origin: center center;
 			}
 		}
-		ul {
+		ul#topnav {
 			text-align: right;
 			padding-right: 0;
 
@@ -690,8 +690,21 @@ body {
 		padding-top: 103px;
 	}
 	
+	section#my_experience {
+
+		ul.columns {
+			padding-left: 17px;
+			-moz-column-count: 2;
+		    -moz-column-gap: 2.5em;
+		    -webkit-column-count: 2;
+		    -webkit-column-gap: 2.5em;
+		     column-count: 2;
+		     column-gap: 2.5em;
+			}
+	}
+
 	section#my_portfolio {
-		ul {
+		ul.special {
 			overflow: auto;
 			margin-top: 20px;
 			margin-bottom: 20px;
