@@ -129,6 +129,7 @@ $("form").submit(function (e) {
 			errors = true
 		}
 	}
+	
 	if(message.length>0){
 		if (message.val() == '') {
 			message.addClass('box-error');
@@ -210,5 +211,46 @@ $("form").submit(function (e) {
 		mainUL.toggleClass('ulanimated');
 		parent.toggleClass('responsive_sticky');
 	});
+
+
+	//Show/hide expandable containers
+	
+	  var showButton = $("#cwwbos_show_more_btn");
+	
+       showButton.on('click', function(){
+		$('.cwwbos_expandable_container').slideToggle( "slow", function () {
+		
+			showButton.text(showButton.text() === 'COLLAPSE ALL' ? 'EXPAND ALL' : 'COLLAPSE ALL');
+	
+			$('html, body').animate({
+               	scrollTop: $(".cwwbos_faq_container").offset().top
+            });
+            
+		});
+		$('.cwwbos_toggle_arrow').toggleClass("cwwbos_selected");
+		/* $('.z_up_arrow').toggleClass("z_selected"); */
+	});
+
+       var showMore = $('.show_more');
+
+       showMore.on('click', function(){
+
+       		var $this = $(this);
+       		var theTargetDiv = $this.siblings('div');
+       		var theTargetImg = $this.siblings('img');
+
+       		theTargetDiv.slideToggle('slow', function () {
+       			
+       			$this.text($this.text() === 'Show Less' ? 'Show More' : 'Show Less');
+
+       			$('html, body').animate({
+               		scrollTop: theTargetDiv.offset().top - 90
+            	});
+
+       		});
+
+       		theTargetImg.toggleClass('selected');
+
+       });
 
 });

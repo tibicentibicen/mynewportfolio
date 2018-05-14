@@ -32,7 +32,7 @@ $roboto: "Roboto", Helvetica, Arial, sans-serif;
 	line: {height:#{$lheight};}
 }
 
-//animmations for filtered categories
+//animations for filtered categories
 @keyframes zoom-in {
 	0% {
 		transform: scale(.1);
@@ -94,6 +94,24 @@ $roboto: "Roboto", Helvetica, Arial, sans-serif;
 	line-height: 0;
 	vertical-align: .4em;
 }
+
+.down-arrow {
+	@include transition(.7s);
+	float: left;
+	vertical-align: middle;
+	margin-right: 10px;
+
+	&.selected {
+		@include transform(rotate(180deg));
+	}
+}
+
+.show_more {
+	color: #0092db;
+	cursor: pointer;
+}
+
+.expandable_container {display: none; margin-bottom: 15px;}
 
 .no_error {
 
@@ -228,7 +246,7 @@ body {
 		font-family: $lato;
 	}
 
-	p, ul.columns{
+	p, ul.no_columns, ul.columns{
 		font-family: $roboto;
 	}
 
@@ -253,7 +271,7 @@ body {
 		}
 	}
 
-	p, ul.columns {
+	p, ul.no_columns, ul.columns {
 		@include fontsizeweightline (16px, normal, 25px);
 
 		&.company_name {
@@ -319,8 +337,6 @@ body {
 		margin-bottom: 40px;
 		// transform: perspective(1px);
 
-		
-		
 		&[type=submit] {
 
 			width: 0;
@@ -445,7 +461,6 @@ body {
 
 		.about_me_text, .about_me_info, .about_me_btns {
 			
-			//@include boxsizing (border-box);
 			margin-bottom: 20px;
 		}
 
@@ -677,11 +692,6 @@ body {
 
 		}
 		&.sticky {
-		// position: fixed;
-		// background: #ffffff;
-		// top: 0;
-		// left: 0;
-		// z-index: 1000;
 			box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.2);
 		}
 	}
@@ -691,16 +701,28 @@ body {
 	}
 	
 	section#my_experience {
+		
+		ul.no_columns, ul.columns {
+			padding-left: 17px;
+		}
 
 		ul.columns {
-			padding-left: 17px;
+			
 			-moz-column-count: 2;
 		    -moz-column-gap: 2.5em;
 		    -webkit-column-count: 2;
 		    -webkit-column-gap: 2.5em;
 		     column-count: 2;
 		     column-gap: 2.5em;
-			}
+		}
+
+		ul + h4 {
+			margin-top: 15px;
+		}
+
+		h4 + p {
+			margin-top: 0;
+		}
 	}
 
 	section#my_portfolio {
