@@ -533,7 +533,7 @@ body .about_me_image {
 }
 body .about_me_image .hello_image_holder {
   position: relative;
-  padding-bottom: 56.2%;
+  padding-bottom: 65%;
 }
 body .about_me_image .hello_image_holder img {
   position: absolute;
@@ -603,6 +603,7 @@ body header {
   top: 0;
   left: 0;
   z-index: 1000;
+  border-bottom: 1px solid #e3e3e3;
 }
 body header #hamburger {
   height: auto;

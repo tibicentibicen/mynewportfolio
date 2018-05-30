@@ -609,7 +609,8 @@ body {
 		.hello_image_holder {
 
 			position: relative; 
-			padding-bottom: 56.2%;
+			//padding-bottom: 56.2%;
+			padding-bottom: 65%;
 
 			img {
 
@@ -715,6 +716,7 @@ body {
 		top: 0;
 		left: 0;
 		z-index: 1000;
+		border-bottom: 1px solid #e3e3e3;
 		
 		
 		#hamburger {
