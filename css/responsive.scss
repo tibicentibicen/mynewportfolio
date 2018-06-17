@@ -68,7 +68,21 @@
 				background-color: blue;
 			}
 		}
+
+		ul.special {
+
+			li {
+
+				margin: 8px 0 10px 0;
+			}
+		}
 	}
+}
+
+@media only screen and (max-width: 960px) { 
+
+	.zig_zag {display:  none;}
+	.section_sidebar {padding-bottom: 0;}
 }
 
 @media only screen and (max-width: 940px) { 
@@ -152,8 +166,17 @@
 	}
 } 
 
+@media only screen and (max-width: 620px) { 
+	body {
+
+		h4.title {float: none;}
+	}
+}
+
 @media only screen and (max-width: 480px) { 
 	body {
+		
+		h1 {font-size: 25px;}
 
 		.cta {
 			min-width: 100%;

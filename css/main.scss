@@ -89,6 +89,8 @@ $roboto: "Roboto", Helvetica, Arial, sans-serif;
 	}
 }
 
+.clear {clear: both;}
+
 .super {
 	font-size: .7em;
 	line-height: 0;
@@ -522,9 +524,24 @@ body {
 		width: 66.666666%;
 	}
 
-	.cols_100 {
+	.cols_100, .experience_row {
 		width: 100%;
 	}
+
+	.experience_row.extra_padding {
+		padding-left: 70px;
+		position: relative;
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 50px;
+			height: auto;
+			border-radius: 3px;
+		}
+	}
+
 
 	.about_me_content {
 		
@@ -593,6 +610,18 @@ body {
 
 							&:hover {
 								background: url('../images/icons8-github-hover.png') top left no-repeat;
+								background-size: contain;
+							}
+						}
+
+
+						&.my_instagram {
+
+							background: url('../images/icons8-instagram-50.png') top left no-repeat;
+							background-size: contain;
+
+							&:hover {
+								background: url('../images/icons8-instagram-hover.png') top left no-repeat;
 								background-size: contain;
 							}
 						}
