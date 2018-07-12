@@ -172,8 +172,22 @@ $(document).ready(function() {
 
         if (errors == false) {
             //getvalues();
-            //alert('no errors');
-            NoErrors.addClass('active');
+            var data = clikedForm.serialize();
+            var url = clikedForm.attr('action');
+
+            $.ajax({
+
+                type:'post',
+                url: url,
+                data: data,
+
+                success: function(response){
+                    //alert(data);
+                    NoErrors.addClass('active');
+
+
+                }   
+            })
         }
     });
     //end form validation
