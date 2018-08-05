@@ -279,16 +279,22 @@ $(document).ready(function() {
 
         var $this = $(this);
         var theTargetDiv = $this.siblings('div');
+        var theTargetH4 = $this.siblings('h4');
         var theTargetImg = $this.siblings('img');
 
         theTargetDiv.slideToggle('slow', function() {
 
             $this.text($this.text() === 'Show Less' ? 'Show More' : 'Show Less');
 
-            $('html, body').animate({
-                scrollTop: theTargetDiv.offset().top - 90
-            });
-
+            if ($this.text() == 'Show More') {
+                $('html, body').animate({
+                 scrollTop: theTargetH4.offset().top - 90
+                });
+            } else {
+                $('html, body').animate({
+                    scrollTop: theTargetDiv.offset().top - 90
+                });
+            }
         });
 
         theTargetImg.toggleClass('selected');

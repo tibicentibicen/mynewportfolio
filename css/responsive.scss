@@ -13,7 +13,7 @@
 			min-height: 425px;
 		}
 		header {
-
+			
 			ul.triggernav {padding-right: 15px;}
 		}
 	}
@@ -30,6 +30,9 @@
 	body {
 
 		header {
+
+			padding-top: 0;
+			padding-bottom: 0;
 
 			#hamburger {display: block;}
 			
@@ -99,10 +102,14 @@
 			font-size: 24px;
 		}
 
-		p {
+		p, ul.columns, ul.no_columns {
 
 			font-size: 14px;
-			line-height:  1.4
+			line-height:  1.4;
+
+			li {
+				margin-bottom: 10px;
+			}
 		}
 
 		.clear {clear: both;}
@@ -123,7 +130,21 @@
 		}
 
 		.cols_25 {width: 50%;}
-	}
+
+		.experience_row {
+
+			&.extra_padding {
+
+				img {
+
+					position: static;
+					display: block;
+					width: 100px;
+				}
+			}
+		}
+	}//end body
+
 	.modal {
 
 		&.fade {
@@ -136,6 +157,12 @@
 
 				//width: calc(100% - 40px);
 				width: 100%;
+
+				img {
+
+					width: 100%;
+					height: auto;
+				}
 			}
 		}
 
@@ -195,10 +222,39 @@
 
 			width: 100%;
 		}
+		section#my_experience {
+
+			ul.columns {
+				
+				-moz-column-count: 1;
+			    -moz-column-gap: none;
+			    -webkit-column-count: 1;
+			    -webkit-column-gap: none;
+			     column-count: 1;
+			     column-gap: none;
+			}
+		}
 	}
 
 	.modal_body {
 		padding-left: 0;
 		padding-right: 0;
+	}
+}
+
+@media only screen and (max-width: 410px) {
+
+	body {
+
+		.experience_row {
+
+			&.extra_padding {
+
+				img {
+
+					width: 100%;
+				}
+			}
+		}
 	}
 }

@@ -20,6 +20,10 @@
   }
 }
 @media only screen and (max-width: 990px) {
+  body header {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   body header #hamburger {
     display: block;
   }
@@ -76,9 +80,12 @@
   body h2 {
     font-size: 24px;
   }
-  body p {
+  body p, body ul.columns, body ul.no_columns {
     font-size: 14px;
     line-height: 1.4;
+  }
+  body p li, body ul.columns li, body ul.no_columns li {
+    margin-bottom: 10px;
   }
   body .clear {
     clear: both;
@@ -100,12 +107,21 @@
   body .cols_25 {
     width: 50%;
   }
+  body .experience_row.extra_padding img {
+    position: static;
+    display: block;
+    width: 100px;
+  }
 
   .modal.fade .modal_center {
     top: 0;
   }
   .modal.fade .modal_dialog {
     width: 100%;
+  }
+  .modal.fade .modal_dialog img {
+    width: 100%;
+    height: auto;
   }
   .modal.in .modal_center {
     transform: translateY(0) !important;
@@ -148,9 +164,22 @@
   body .cols_25 {
     width: 100%;
   }
+  body section#my_experience ul.columns {
+    -moz-column-count: 1;
+    -moz-column-gap: none;
+    -webkit-column-count: 1;
+    -webkit-column-gap: none;
+    column-count: 1;
+    column-gap: none;
+  }
 
   .modal_body {
     padding-left: 0;
     padding-right: 0;
+  }
+}
+@media only screen and (max-width: 410px) {
+  body .experience_row.extra_padding img {
+    width: 100%;
   }
 }

@@ -167,6 +167,9 @@
   padding-top: 50px;
   display: none;
 }
+.no_error img {
+  width: none;
+}
 .no_error.active {
   display: block;
 }
