@@ -55,7 +55,7 @@ $(document).ready(function() {
     $('#topnav li').on('click', function() {
 
         var theid = $(this).attr('id');
-        var thetarget = $('section#my_' + theid).offset().top - 103;
+        
 
 
         if ($('#hamburger').is(':visible')) {
@@ -63,6 +63,9 @@ $(document).ready(function() {
             $('.line-1, .line-2, .line-3').removeClass('is-clicked');
             $('#topnav').removeClass('ulanimated');
             $('header').removeClass('responsive_sticky');
+            var thetarget = $('section#my_' + theid).offset().top - 20;
+        } else {
+            var thetarget = $('section#my_' + theid).offset().top - 80;
         }
 
         $('html, body').animate({
@@ -143,7 +146,8 @@ $(document).ready(function() {
         var name = clikedForm.find('#name');
         var email = clikedForm.find('#email');
         var message = clikedForm.find('#message');
-        var NoErrors = clikedForm.next('div');
+        var loading = clikedForm.parent().find('.loading');
+        var NoErrors = clikedForm.parent().find('.no_error');
 
         if (name.length > 0) {
             if (name.val() == '') {
@@ -172,8 +176,10 @@ $(document).ready(function() {
 
         if (errors == false) {
             //getvalues();
-            var data = clikedForm.serialize();
+            var data = clikedForm.serialize();//grabs all the form fields data
             var url = clikedForm.attr('action');
+            loading.addClass('active');
+
 
             $.ajax({
 
@@ -183,6 +189,7 @@ $(document).ready(function() {
 
                 success: function(response){
                     //alert(data);
+                    //loading.removeClass('active');
                     NoErrors.addClass('active');
 
 
@@ -222,7 +229,7 @@ $(document).ready(function() {
         }
 
         if ($('.no_error:visible')) {
-            $('.no_error').removeClass('active');
+            $('.no_error, .loading').removeClass('active');
             $('#name, #email, #message').val('');
         }
 
@@ -349,6 +356,13 @@ $(document).ready(function() {
     });
 
     checkAnimation();
+
+    //click on email address to launch contact me overlay
+
+    $('#launchcontact').on('click', function() {
+        $('#contact_modal').addClass('in');
+
+    });
     
 
 });

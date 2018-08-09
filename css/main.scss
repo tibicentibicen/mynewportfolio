@@ -184,9 +184,13 @@ $roboto: "Roboto", Helvetica, Arial, sans-serif;
 	cursor: pointer;
 }
 
+#launchcontact {
+	cursor: pointer;
+}
+
 .expandable_container {display: none; margin-bottom: 15px;}
 
-.no_error {
+.no_error, .loading {
 
 	position: absolute;
 	left:  0;
@@ -198,10 +202,6 @@ $roboto: "Roboto", Helvetica, Arial, sans-serif;
 	padding-top: 50px;
 	display: none;
 
-	img {
-		width: none;
-	}
-
 	&.active {
 		display: block;
 	}
@@ -209,12 +209,6 @@ $roboto: "Roboto", Helvetica, Arial, sans-serif;
 
 .no_wrap {
 	white-space: nowrap;
-}
-
-.zig_zag {
-	position: absolute;
-	bottom: 0;
-	left: 15px;
 }
 
 .modal {
@@ -318,6 +312,8 @@ body {
 		width: 100%;
 		overflow: hidden;
 	}
+
+	footer {text-align: center!important;}
 
 	h1, h2, h3, h4, .portfolio_name {
 		font-family: $lato;
@@ -450,7 +446,7 @@ body {
 	hr.mobile_hr {display: none}
 
 	.section {
-		border-top: 1px solid #e3e3e3;
+		border-top: 2px solid #e3e3e3;
 	}
 
 	.cta {

@@ -151,12 +151,16 @@
   cursor: pointer;
 }
 
+#launchcontact {
+  cursor: pointer;
+}
+
 .expandable_container {
   display: none;
   margin-bottom: 15px;
 }
 
-.no_error {
+.no_error, .loading {
   position: absolute;
   left: 0;
   top: 0;
@@ -167,21 +171,12 @@
   padding-top: 50px;
   display: none;
 }
-.no_error img {
-  width: none;
-}
-.no_error.active {
+.no_error.active, .loading.active {
   display: block;
 }
 
 .no_wrap {
   white-space: nowrap;
-}
-
-.zig_zag {
-  position: absolute;
-  bottom: 0;
-  left: 15px;
 }
 
 .modal {
@@ -294,6 +289,9 @@ body header, body section, body footer {
   padding: 40px 0;
   width: 100%;
   overflow: hidden;
+}
+body footer {
+  text-align: center !important;
 }
 body h1, body h2, body h3, body h4, body .portfolio_name {
   font-family: "Lato", Helvetica, Arial, sans-serif;
@@ -412,7 +410,7 @@ body hr.mobile_hr {
   display: none;
 }
 body .section {
-  border-top: 1px solid #e3e3e3;
+  border-top: 2px solid #e3e3e3;
 }
 body .cta {
   font-family: "Lato", Helvetica, Arial, sans-serif;
@@ -706,3 +704,4 @@ body section#my_portfolio ul.special li:first-child {
 body section#my_portfolio ul.special li.active {
   color: #3333ff;
 }
+
