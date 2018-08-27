@@ -361,6 +361,7 @@ $(document).ready(function() {
 
     $('#launchcontact').on('click', function() {
         $('#contact_modal').addClass('in');
+        $('body').addClass('modal_open');
 
     });
     
