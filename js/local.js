@@ -177,7 +177,8 @@ $(document).ready(function() {
         if (errors == false) {
             //getvalues();
             var data = clikedForm.serialize();//grabs all the form fields data
-            var url = clikedForm.attr('action');
+            //var url = clikedForm.attr('action');
+            var url = 'processcontacts.php';
             loading.addClass('active');
 
 
